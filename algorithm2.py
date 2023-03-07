@@ -1,32 +1,45 @@
-# ddd" becomes "3d"
-# • "heloooooooo there" becomes "hel8o there"  ** NOTE SPACES
-# • "choosemeeky and tuition-free" becomes "ch2osem2eky and tuition-fr2e"
+# Project 1, Algorithm 2:
+# Names: Samee Rauf, Victoria Parry
+# CSUF-supplied email address: srauf@csu.fullerton.edu, vjparry414@csu.fullerton.edu
+
+# Test cases for algorithm:
 input_1 = "ddd"
 input_2 = "heloooooooo there"
 input_3 = "choosemeeky and tuition-free"
-#input_2 = "h e l o o o o o o o o   there"
-#           0 1 2 3 4 5 6 7 8 9 10
-# initialize next = next +1, if next > len(input_string, then next % input_string
-
 
 def string_compress(input_string):
-    print(len(input_string)-1)
-    my_dict = dict()
     final_string = ""
     consecutive_counter = 0
-    o_counter = 0
+    # going to loop through each letter in the string
     for i in range(len(input_string)):
-        if i != len(input_string-1)
-        if input_string[i] == input_string[i+1]:  # if next letter is the same EX. ooa
+        # edge case1 last letter in entire string
+        if i == len(input_string)-1:
+            # edgcase1a: if last letter in entire string ,is last letter in run then increment consecutive counter
+            if consecutive_counter >= 1 and input_string[i] == input_string[i-1]:
+                final_string = final_string + str(consecutive_counter + 1)
+                final_string = final_string + input_string[i]
+            # edcase1b: if last letter in entire string, nonconsecutive letter, just add character to final string
+            elif consecutive_counter == 0:
+                final_string = final_string + input_string[i]
+        # if next character is the same as current character, increment consecutive counter & go to next iteration
+        elif input_string[i] == input_string[i+1]:  # if this
             consecutive_counter += 1
-        elif input_string[i] != input_string[i+1]:
-            if consecutive_counter == 1:
-                final_string += input_string[i]
-            elif consecutive_counter > 1:
-                final_string += str(consecutive_counter) + input_string[i]
-            consecutive_counter = 0  # reset consecutive counter to 0
+            continue
+        # if curr character is not the same as the next character
+        else:
+            # if curr character is last consecutive character in the run, increment consecutive counter
+            if (input_string[i] != input_string[i+1] and input_string[i] == input_string[i-1]):
+                consecutive_counter += 1
+            # if the consecutive counter >1 add it to the final string
+            if consecutive_counter > 1:
+                final_string = final_string + str(consecutive_counter)
+            # reset the consecutive character count to 0 , now that we have processed last character in run
+            consecutive_counter = 0
+            # if the consecutive character is 0 then only add letter to the final string
+            final_string = final_string + \
+                input_string[i]
+    return final_string
 
-    print("this is the final_String: ", final_string)
 
+print(string_compress(input_3))
 
-string_compress(input_2)
