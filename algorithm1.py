@@ -98,7 +98,7 @@ def Cities_in_California():
             for index in range(1, len(array2a)):
                 # slicing the array from index to size_looking_for(Window)
                 if clean_city == array2a[index: index + size_looking_for]:
-                    mydict2[clean_city] = index-2
+                    mydict2[clean_city] = index-1
 
         # sort dictionary, by looking at the key & returning the corresponding value for each pair to the sorted function
         sorted_dict2 = dict(sorted(mydict2.items(), key=lambda x: x[1]))
@@ -124,7 +124,7 @@ def Cities_in_California():
             for index in range(1, len(array3a)):
                 # slicing the array from index to size_looking_for(Window)
                 if clean_city == array3a[index: index + size_looking_for]:
-                    mydict3[clean_city] = index-2
+                    mydict3[clean_city] = index-1
 
         # sort dictionary, by looking at the key & returning the corresponding value for each pair to the sorted function
         sorted_dict3 = dict(sorted(mydict3.items(), key=lambda x: x[1]))
