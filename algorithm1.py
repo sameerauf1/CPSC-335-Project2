@@ -84,7 +84,7 @@ def Cities_in_California():
         Output_array = [key for key in sorted_dict.keys()]
 
         # ----------------------------------------------------------------------------------------------------------------------------------------
-        # test case 2 (Same Code & logic, but using array 2a and 2b and mydict2):----------------------------------------------------------------
+        # test case 2 (Same Code & logic, but using array 3a and 3b and mydict3):----------------------------------------------------------------
         # we are looping through seperated cities in b arrays
         for city in array2b:
 
