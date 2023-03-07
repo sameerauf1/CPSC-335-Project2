@@ -1,3 +1,6 @@
+# Project 2, Algorithm 1:
+# Names: Samee Rauf, Victoria Parry
+# CSUF-supplied email address: srauf@csu.fullerton.edu, vjparry414@csu.fullerton.edu
 def Cities_in_California():
     # intializing list for array, 6 arrays for 3 test cases
     array1a = []
@@ -12,7 +15,7 @@ def Cities_in_California():
     mydict2 = {}
     mydict3 = {}
 
-    # load text with reader permission
+    # load text file with reader permission
     with open('in2a.txt', 'r') as file:
 
         # all the lines in the text file
@@ -54,7 +57,7 @@ def Cities_in_California():
         array3a = array3a[0]
 
         # test case 1:----------------------------------------------------------------
-        # we looping through seperated cities in b arrays
+        # we are looping through seperated cities in b arrays
         for city in array1b:
 
             # we will look only at the city, not the singlge quote ex. 'Brea' --> Brea
@@ -68,7 +71,7 @@ def Cities_in_California():
                 # slicing the array from index to size_looking_for(Window)
                 if clean_city == array1a[index: index + size_looking_for]:
 
-                    # need to account for characters skipped
+                    # need to account for 0 based index output
                     mydict[clean_city] = index-1
 
         # sort dictionary, by looking at the key & returning the corresponding value for each pair to the sorted function
@@ -79,11 +82,10 @@ def Cities_in_California():
 
         # create new  list with city names in order of index in which it appeared
         Output_array = [key for key in sorted_dict.keys()]
-        # print(Output_order)
-        # print(Output_array)
+
         # ----------------------------------------------------------------------------------------------------------------------------------------
         # test case 2 (Same Code & logic, but using array 2a and 2b and mydict2):----------------------------------------------------------------
-        # we looping through seperated cities in b arrays
+        # we are looping through seperated cities in b arrays
         for city in array2b:
 
             # we will look only at the city, not the singlge quote ex. 'Brea' --> Brea
@@ -97,36 +99,44 @@ def Cities_in_California():
                 # slicing the array from index to size_looking_for(Window)
                 if clean_city == array2a[index: index + size_looking_for]:
                     mydict2[clean_city] = index-2
+
         # sort dictionary, by looking at the key & returning the corresponding value for each pair to the sorted function
         sorted_dict2 = dict(sorted(mydict2.items(), key=lambda x: x[1]))
-        # print(sorted_dict)
-        Output_order2 = [sorted_dict2[key] for key in sorted_dict2.keys()]
-        Output_array2 = [key for key in sorted_dict2.keys()]
-        # print(Output_order)
-        # print(Output_array)
 
-        # test case 3:----------------------------------------------------------------
+        # create new list with city indexes in which they were listed
+        Output_order2 = [sorted_dict2[key] for key in sorted_dict2.keys()]
+
+        # create new  list with city names in order of index in which it appeared
+        Output_array2 = [key for key in sorted_dict2.keys()]
+
+        # ----------------------------------------------------------------------------------------------------------------------------------------
+        # test case 3 (Same Code & logic, but using array 2a and 2b and mydict2):----------------------------------------------------------------
+        # we are looping through seperated cities in b arrays
         for city in array3b:
-            lenghtOF = len(city)
+
+            # we will look only at the city, not the singlge quote ex. 'Brea' --> Brea
             clean_city = city[1:len(city)-1]
-        # print("the lenght of clean city is",
-        #       clean_city, "is ", len(clean_city))
+
+            # we will grab the length of the city to use as sliding window when looping through concatenated cities in a arrays
             size_looking_for = len(clean_city)
+
+            # we will loop through a arrays, checking if sliding window from arrayb matches array a
             for index in range(1, len(array3a)):
-                # print(" we are printing here",
-                #      array1a[index: index + size_looking_for], "and the clean city is", clean_city)
+                # slicing the array from index to size_looking_for(Window)
                 if clean_city == array3a[index: index + size_looking_for]:
-                    #  print(" **************at index we have a match:",
-                    #       index - 2, ":", clean_city)
                     mydict3[clean_city] = index-2
+
+        # sort dictionary, by looking at the key & returning the corresponding value for each pair to the sorted function
         sorted_dict3 = dict(sorted(mydict3.items(), key=lambda x: x[1]))
 
+        # create new list with city indexes in which they were listed
         Output_order3 = [sorted_dict3[key] for key in sorted_dict3.keys()]
+
+        # create new  list with city names in order of index in which it appeared
         Output_array3 = [key for key in sorted_dict3.keys()]
-        # print(Output_order3)
-        # print(Output_array3)
+
+        # return output order and output array for each testcase
         return (Output_order, Output_array, Output_order2, Output_array2, Output_order3, Output_array3)
 
 
-# print("--------------------------------------------------------------------------------------------------------------------------------")
 print(Cities_in_California())
