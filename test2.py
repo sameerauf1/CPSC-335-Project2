@@ -4,6 +4,14 @@
 input_1 = "ddd"
 input_2 = "heloooooooo there"
 input_3 = "choosemeeky and tuition-free"
+my_string = "sanoaklandrialtofullertonmarcolongbreacoronamodestoclovissimithousand"
+mychar = 'b'
+
+
+def find_index(string, char):
+    for i in range(len(string)):
+        if string[i] == char:
+            print(string[i], "at index", i)
 
 
 def string_compress(input_string):
@@ -35,3 +43,5 @@ def string_compress(input_string):
 
 
 string_compress(input_2)
+
+find_index(my_string, mychar)
