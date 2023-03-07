@@ -7,7 +7,7 @@ def Cities_in_California():
     array3a = []
     array3b = []
 
-    # creating dictionary to eventually store city from array b,  with the index it was found in array a
+    # creating dictionary to eventually store city name from array b, with the city index it was found in array a
     mydict = {}  # city: index
     mydict2 = {}
     mydict3 = {}
@@ -52,6 +52,7 @@ def Cities_in_California():
         array1a = array1a[0]
         array2a = array2a[0]
         array3a = array3a[0]
+
         # test case 1:----------------------------------------------------------------
         # we looping through seperated cities in b arrays
         for city in array1b:
@@ -67,7 +68,7 @@ def Cities_in_California():
                 # slicing the array from index to size_looking_for(Window)
                 if clean_city == array1a[index: index + size_looking_for]:
 
-                    #need to account for characters skipped 
+                    # need to account for characters skipped
                     mydict[clean_city] = index-1
 
         # sort dictionary, by looking at the key & returning the corresponding value for each pair to the sorted function
