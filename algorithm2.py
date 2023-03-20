@@ -7,6 +7,7 @@ input_1 = "ddd"
 input_2 = "heloooooooo there"
 input_3 = "choosemeeky and tuition-free"
 
+
 def string_compress(input_string):
     final_string = ""
     consecutive_counter = 0
@@ -22,7 +23,7 @@ def string_compress(input_string):
             elif consecutive_counter == 0:
                 final_string = final_string + input_string[i]
         # if next character is the same as current character, increment consecutive counter & go to next iteration
-        elif input_string[i] == input_string[i+1]:  # if this
+        elif input_string[i] == input_string[i+1]:
             consecutive_counter += 1
             continue
         # if curr character is not the same as the next character
@@ -41,5 +42,4 @@ def string_compress(input_string):
     return final_string
 
 
-print(string_compress(input_3))
-
+print(string_compress(input_2))
