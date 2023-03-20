@@ -1,6 +1,6 @@
 # Project 2, Algorithm 1:
 # Names: Samee Rauf, Victoria Parry
-# CSUF-supplied email address: srauf@csu.fullerton.edu, vjparry414@csu.fullerton.edu
+# Email address: srauf@csu.fullerton.edu, vjparry414@csu.fullerton.edu
 def Cities_in_California():
     # intializing list for array, 6 arrays for 3 test cases
     array1a = []
@@ -16,7 +16,7 @@ def Cities_in_California():
     mydict3 = {}
 
     # load text file with reader permission
-    with open('in2a.txt', 'r') as file:
+    with open('in2a.txt', 'r', encoding='utf-8') as file:
 
         # all the lines in the text file
         file_lines = file.readlines()

@@ -1,6 +1,6 @@
 # Project 1, Algorithm 2:
 # Names: Samee Rauf, Victoria Parry
-# CSUF-supplied email address: srauf@csu.fullerton.edu, vjparry414@csu.fullerton.edu
+# Email address: srauf@csu.fullerton.edu, vjparry414@csu.fullerton.edu
 
 # Test cases for algorithm:
 input_1 = "ddd"
@@ -42,4 +42,6 @@ def string_compress(input_string):
     return final_string
 
 
+print(string_compress(input_1))
 print(string_compress(input_2))
+print(string_compress(input_3))
